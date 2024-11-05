@@ -19,3 +19,6 @@ Technologies Used<br>
 Python: Primary language for data processing and model training.<br>
 Librosa: Audio analysis and feature extraction library.<br>
 Machine Learning Algorithms: For classifying emotions from extracted features.<br>
+
+checkout the data set to work on this project:
+<a href="https://drive.google.com/drive/folders/1EddpL5mQ-7HN9dN0ATOkUXhOpcIcx-ib?usp=sharing">Link Here</a>
