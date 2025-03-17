@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Emotion Analysis Result</title>
+    <style>
+        /* Industry-Level CSS for Emotion Analysis Result Page */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    text-align: center;
+}
+
+h2 {
+    color: #007bff;
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.content-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+}
+
+p, h3, ul, audio {
+    margin: 10px 0;
+    width: 100%;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+ul li {
+    font-size: 16px;
+    padding: 5px 0;
+    background: #e3efff;
+    margin: 5px 0;
+    border-radius: 5px;
+}
+
+audio {
+    width: 100%;
+}
+
+a {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+a:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+
+</head>
+<body>
+    <h2>Emotion Analysis Result</h2><br>
+    <p><strong>Predicted Emotion:</strong> {{ emotion }}</p><br>
+    
+    <h3>Emotion Probabilities:</h3>
+    <ul>
+        {% for emotion, probability in probabilities.items %}
+            <li>{{ emotion }}: {{ probability }}%</li>
+        {% endfor %}
+    </ul>
+    
+    <h3>Uploaded Audio:</h3>
+    <audio controls>
+        <source src="{{ audio_url }}" type="audio/wav">
+        Your browser does not support the audio element.
+    </audio>
+    
+    <br><br>
+    <a href="{% url 'upload_audio' %}">Upload Another Audio</a>
+</body>
+</html>
